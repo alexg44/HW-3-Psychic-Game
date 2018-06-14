@@ -10,7 +10,57 @@
 
     </head>
     <body>
+    <div class="container"></div>
         <h1>The Psychic Game</h1>
+        <p>Guess what I'm thinking of!</p>
         
+        <div class="wins">
+            <p id="winCount">Wins: </p>
+        </div>
+
+        <div class="losses">
+            <p id="lossCount">Losses: </p>
+        </div>
+
+        <div class="Guesses">
+            <p id="guessesLeft">Guesses Left: </p>
+        </div>
+
+        <div class="Guesses">
+            <p id="guessesMade">Your Guesses so far: </p>
+        </div>
+    </div>
+
+    <script>
+
+        //variables
+
+        var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+        var wins = 0;
+        var losses = 0;
+        var guessesLeft = 9;
+        var guessesMade = 0;
+        var computerChoice = alphabet[Math.floor(Math.random() * alphabet.length)];
+        console.log(computerChoice);
+
+        //code
+        document.onkeypress = function(event) {
+    var userGuess = event.key;
+
+    if(userGuess === computerChoice){
+        wins++;
+    }else{
+        guesses--;
+    }
+
+    if(guesses = 0){
+        losses++
+    }
+}   
+    document.getElementById('wins').innerHTML = "Wins: " + wins;
+    document.getElementById('losses').innerHTML = "losses: " + losses;
+    document.getElementById('guesses').innerHTML = "Guesses left: " + guesses;
+
+    </script>
     </body>
 </html>
