@@ -15,19 +15,19 @@
         <p>Guess what I'm thinking of!</p>
         
         <div class="wins">
-            <p id="winCount">Wins: </p>
+            <p id="winCount"></p>
         </div>
 
         <div class="losses">
-            <p id="lossCount">Losses: </p>
+            <p id="lossCount"></p>
         </div>
 
         <div class="Guesses">
-            <p id="guessesLeft">Guesses Left: </p>
+            <p id="guessesLeft"></p>
         </div>
 
         <div class="Guesses">
-            <p id="guessesMade">Your Guesses so far: </p>
+            <p id="guessesMade"></p>
         </div>
     </div>
 
@@ -40,26 +40,16 @@
         var losses = 0;
         var guessesLeft = 9;
         var guessesMade = 0;
-        var computerChoice = alphabet[Math.floor(Math.random() * alphabet.length)];
-        console.log(computerChoice);
+        //var computerChoice = alphabet[Math.floor(Math.random() * alphabet.length)];
+        //console.log(computerChoice);
 
         //code
-        document.onkeypress = function(event) {
-    var userGuess = event.key;
-
-    if(userGuess === computerChoice){
-        wins++;
-    }else{
-        guesses--;
-    }
-
-    if(guesses = 0){
-        losses++
-    }
-}   
-    document.getElementById('wins').innerHTML = "Wins: " + wins;
-    document.getElementById('losses').innerHTML = "losses: " + losses;
-    document.getElementById('guesses').innerHTML = "Guesses left: " + guesses;
+        $(document).ready(function() {
+            var computerChoice = alphabet[Math.floor(Math.random() * alphabet.length)];
+            console.log(computerChoice);
+            var userChoice = 
+            $(".winCount"
+        }
 
     </script>
     </body>
