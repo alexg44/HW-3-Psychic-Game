@@ -13,21 +13,23 @@
     <div class="container"></div>
         <h1>The Psychic Game</h1>
         <p>Guess what I'm thinking of!</p>
+
+        <h2 class="userGuess" id="result"></h2>
         
         <div class="wins">
-            <p id="winCount"></p>
+            <p id="winCount">Wins: </p>
         </div>
 
         <div class="losses">
-            <p id="lossCount"></p>
+            <p id="lossCount">Losses: </p>
         </div>
 
         <div class="Guesses">
-            <p id="guessesLeft"></p>
+            <p id="guessesLeft">Guesses Left: </p>
         </div>
 
         <div class="Guesses">
-            <p id="guessesMade"></p>
+            <p id="guessesMade">Guesses Made: </p>
         </div>
     </div>
 
@@ -38,8 +40,10 @@
         var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
         var wins = 0;
         var losses = 0;
+        var guesses = 9;
         var guessesLeft = 9;
         var guessesMade = 0;
+        var correctLetter
         //var computerChoice = alphabet[Math.floor(Math.random() * alphabet.length)];
         //console.log(computerChoice);
 
@@ -47,9 +51,30 @@
         $(document).ready(function() {
             var computerChoice = alphabet[Math.floor(Math.random() * alphabet.length)];
             console.log(computerChoice);
-            var userChoice = 
-            $(".winCount"
-        }
+            //var userChoice = alphabet.currentTarget ---test commented out
+
+            var newGuessesLeft = function() {
+            $('#guessLeft') = "Guesses left: " + guessesLeft;
+            };
+            
+            var newCorrectLetter = function() {
+            this.correctLetter = this.computerChoice[Math.floor(Math.random() * this.computerChoice.length)];
+            };
+            
+            var newGuessesMade = function() {
+            $('#guessesMade') = "Guesses so far: " + guessesMade;
+            };
+
+            var newLossCount = function() {
+            $('#lossCount') = "Number of Losses: " + losses;
+            };
+
+            var newWinCount = function() {
+            $('#winCount') = "Guesses so far: " + wins;
+            };
+
+        });
+        
 
     </script>
     </body>
